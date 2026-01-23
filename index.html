@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luthando-Nonjabulo | Portfolio</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html">LN</a>
+      <div class="nav__links">
+        <a class="nav__link active" href="index.html">Home</a>
+        <a class="nav__link" href="projects.html">Projects</a>
+        <a class="nav__link" href="passions.html">Passions</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero__left">
+        <div class="hero__eyebrow">Graduate Software Engineer (Backend)</div>
+        <h1 class="hero__title">Luthando-Nonjabulo</h1>
+        <div class="hero__subtitle">Love • Joy</div>
+
+        <p class="hero__desc">
+          I build user-focused backend systems with clean APIs, explainable logic, and reliable engineering workflows.
+          I’m passionate about accessibility, the digital divide, and human-centred design.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="projects.html">View Projects</a>
+          <a class="btn btn--ghost" href="https://github.com/nonluthando" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn--ghost" href="#" aria-disabled="true" title="Add CV file later">Download CV</a>
+        </div>
+
+        <div class="hero__chips">
+          <span class="chip">Python</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Flask</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">SQLite</span>
+          <span class="chip">pytest</span>
+          <span class="chip">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="avatar">
+          <img src="assets/profile-placeholder.png" alt="Profile placeholder" />
+        </div>
+        <div class="hero__note">
+          <div class="hero__noteTitle">Psychology × Computing</div>
+          <p>
+            I’m fascinated by how complex systems process information — whether that system is a brain or a computer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__header">
+        <h2>Featured Projects</h2>
+        <p>Autoscrolling carousel — swipe on mobile, use arrows on desktop.</p>
+      </div>
+
+      <div class="carousel" data-carousel="projects">
+        <button class="carousel__btn carousel__btn--left" aria-label="Previous slide">‹</button>
+
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <article class="projectCard">
+              <div class="projectCard__top">
+                <div class="projectCard__titleRow">
+                  <h3>SeaClear</h3>
+                  <span class="tag">Capstone</span>
+                </div>
+                <p class="muted">Water quality platform for safer beach decisions.</p>
+              </div>
+              <div class="projectCard__tags">
+                <span class="pill">Flask</span><span class="pill">MongoDB</span><span class="pill">RBAC</span>
+              </div>
+              <div class="projectCard__actions">
+                <a class="btn btn--small btn--primary" target="_blank" rel="noreferrer" href="https://github.com/KDVNZIMANDE/SeaClear">Repo</a>
+              </div>
+            </article>
+
+            <article class="projectCard">
+              <div class="projectCard__top">
+                <div class="projectCard__titleRow">
+                  <h3>ScoreRent</h3>
+                  <span class="tag tag--teal">Backend</span>
+                </div>
+                <p class="muted">Decision-support tool scoring listings and helping avoid wasted application fees.</p>
+              </div>
+              <div class="projectCard__tags">
+                <span class="pill">FastAPI</span><span class="pill">Pydantic</span><span class="pill">CI</span>
+              </div>
+              <div class="projectCard__actions">
+                <a class="btn btn--small btn--primary" target="_blank" rel="noreferrer" href="https://github.com/nonluthando/ScoreRent">Repo</a>
+              </div>
+            </article>
+
+            <article class="projectCard">
+              <div class="projectCard__top">
+                <div class="projectCard__titleRow">
+                  <h3>IncidentDesk</h3>
+                  <span class="tag">CRUD</span>
+                </div>
+                <p class="muted">Internal incident tracker with filtering, lifecycle updates, and persistence.</p>
+              </div>
+              <div class="projectCard__tags">
+                <span class="pill">FastAPI</span><span class="pill">SQLite</span><span class="pill">Jinja2</span>
+              </div>
+              <div class="projectCard__actions">
+                <a class="btn btn--small btn--primary" target="_blank" rel="noreferrer" href="https://github.com/nonluthando/IncidentDesk">Repo</a>
+              </div>
+            </article>
+
+            <article class="projectCard">
+              <div class="projectCard__top">
+                <div class="projectCard__titleRow">
+                  <h3>NetworkComm</h3>
+                  <span class="tag">Systems</span>
+                </div>
+                <p class="muted">TCP client/server messaging with multithreading and structured logging.</p>
+              </div>
+              <div class="projectCard__tags">
+                <span class="pill">TCP</span><span class="pill">Threads</span><span class="pill">Logging</span>
+              </div>
+              <div class="projectCard__actions">
+                <a class="btn btn--small btn--primary" target="_blank" rel="noreferrer" href="https://github.com/nonluthando/NetworkComm">Repo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel__btn carousel__btn--right" aria-label="Next slide">›</button>
+        <div class="carousel__dots" aria-label="Carousel navigation"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__header">
+        <h2>Currently working on</h2>
+        <p>Keeping the portfolio active and improving project quality.</p>
+      </div>
+
+      <div class="workCard">
+        <div>
+          <div class="workCard__title">Portfolio Website + Refinements</div>
+          <div class="workCard__desc muted">
+            Improving documentation, testing coverage, and UI polish across projects — with accessibility and clarity as priorities.
+          </div>
+        </div>
+        <a class="btn btn--small btn--ghost" href="projects.html">See details</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner container">
+      <span class="muted">© <span id="year"></span> Luthando-Nonjabulo</span>
+      <a class="footer__link" href="https://github.com/nonluthando" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="static/script.js"></script>
+</body>
+</html>
