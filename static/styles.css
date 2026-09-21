@@ -136,6 +136,88 @@ body{
 .footer__link{color: rgba(20,184,166,0.95);text-decoration:none;font-weight:900}
 .footer__link:hover{text-decoration:underline}
 
+/* ============================
+   Weekly Schedule
+   ============================ */
+
+.goal-excel{ --grgb: 59,130,246; }
+.goal-ai{ --grgb: 20,184,166; }
+.goal-projects{ --grgb: 139,92,246; }
+.goal-techjobs{ --grgb: 245,158,11; }
+.goal-csjobs{ --grgb: 244,63,94; }
+.goal-sourcing{ --grgb: 6,182,212; }
+.goal-describe{ --grgb: 132,204,22; }
+.goal-csnet{ --grgb: 251,146,60; }
+.goal-dataeng{ --grgb: 236,72,153; }
+
+.statGrid{display:grid;grid-template-columns: repeat(3, 1fr);gap:10px;}
+.statItem{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius: 14px;border:1px solid rgba(255,255,255,0.12);background: rgba(255,255,255,0.06);}
+.statItem__label{flex:1;font-weight:700;font-size:13px;}
+.statItem__hours{font-weight:900;color: rgba(20,184,166,0.95);font-size:13px;}
+
+.legendDot{width:12px;height:12px;border-radius:999px;flex:0 0 auto;background: rgb(var(--grgb));box-shadow: 0 0 0 3px rgba(var(--grgb), 0.20);}
+
+.scheduleToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:18px 0 12px;}
+.scheduleToolbar__actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.scheduleScroll{overflow-x:auto;padding-bottom:6px;}
+.scheduleGrid{
+  display:grid;
+  grid-template-columns: 96px repeat(7, minmax(130px, 1fr));
+  gap:8px;
+  min-width:960px;
+}
+.scheduleGrid__corner{}
+.scheduleGrid__dayHead{
+  text-align:center;font-weight:900;font-size:13px;color:var(--muted);
+  padding:8px 4px;
+}
+.scheduleGrid__timeLabel{
+  display:flex;align-items:center;
+  font-size:12px;font-weight:700;color:var(--muted);
+  padding:4px 6px;
+}
+
+.slotCell{
+  position:relative;
+  min-height:64px;
+  border-radius: 14px;
+  border:1px dashed rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.04);
+  display:flex;align-items:center;justify-content:center;
+  padding:8px;
+  cursor:pointer;
+  transition: 0.15s ease;
+}
+.slotCell:hover{border-color: rgba(255,255,255,0.30);background: rgba(255,255,255,0.07);}
+.slotCell[class*="goal-"]{
+  border:1px solid rgba(var(--grgb), 0.45);
+  background: rgba(var(--grgb), 0.18);
+}
+.slotCell[class*="goal-"]:hover{background: rgba(var(--grgb), 0.26);}
+.slotCell__label{font-size:12px;font-weight:800;text-align:center;line-height:1.3;color:var(--text);}
+.slotCell__label--empty{color: rgba(255,255,255,0.35);font-size:18px;font-weight:900;}
+
+.cellMenu{
+  position:fixed;
+  z-index:50;min-width:210px;
+  background: rgba(7,16,33,0.98);
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius: 14px;
+  padding:8px;
+  box-shadow: var(--shadow);
+  display:grid;gap:2px;
+}
+.cellMenu button{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 10px;border-radius:10px;border:none;
+  background:transparent;color:var(--text);
+  cursor:pointer;text-align:left;font-size:13px;font-weight:700;
+  font-family:inherit;
+}
+.cellMenu button:hover{background: rgba(255,255,255,0.08);}
+.cellMenu__clear{color: var(--muted) !important;border-top:1px solid rgba(255,255,255,0.10);margin-top:4px;padding-top:8px !important;}
+
 @media (max-width: 980px){
   .hero{grid-template-columns:1fr}
   .passionGrid{grid-template-columns:1fr}
@@ -144,4 +226,5 @@ body{
   .contactGrid{grid-template-columns:1fr}
   .projectCard{min-width: 88vw}
   .section__header{flex-direction:column;align-items:flex-start}
+  .statGrid{grid-template-columns:1fr 1fr}
 }

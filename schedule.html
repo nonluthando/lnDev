@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule | Luthando-Nonjabulo</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html">LN</a>
+      <div class="nav__links">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="projects.html">Projects</a>
+        <a class="nav__link" href="passions.html">Passions</a>
+        <a class="nav__link active" href="schedule.html">Schedule</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page">
+    <header class="pageHeader">
+      <h1>Weekly Schedule</h1>
+      <p class="muted">
+        A weekly planner built around my current goals: Excel, AI, my projects, tech &amp; customer service job
+        applications, job sourcing, describing my projects well, CS/C#/.NET, and data engineering &amp; analytics.
+        Click any block to assign it — your plan saves automatically in this browser.
+      </p>
+    </header>
+
+    <section class="section">
+      <div class="section__header">
+        <h2>Goals</h2>
+        <p>Hours scheduled this week, by goal.</p>
+      </div>
+      <div id="statGrid" class="statGrid"></div>
+    </section>
+
+    <section class="section">
+      <div class="scheduleToolbar">
+        <div class="muted" id="totalHoursLabel">0 / 0 hrs scheduled</div>
+        <div class="scheduleToolbar__actions">
+          <button id="loadSuggestedBtn" class="btn btn--small btn--ghost" type="button">Load suggested plan</button>
+          <button id="clearAllBtn" class="btn btn--small btn--ghost" type="button">Clear all</button>
+        </div>
+      </div>
+
+      <div class="scheduleScroll">
+        <div id="scheduleGrid" class="scheduleGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner container">
+      <span class="muted">© <span id="year"></span> Luthando-Nonjabulo</span>
+      <a class="footer__link" href="index.html">Home</a>
+    </div>
+  </footer>
+
+  <script src="static/script.js"></script>
+  <script src="static/schedule.js"></script>
+</body>
+</html>
