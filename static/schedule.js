@@ -7,12 +7,12 @@
   const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   const SLOTS = [
-    { key: "s1", label: "07:00–09:00" },
-    { key: "s2", label: "09:00–11:00" },
-    { key: "s3", label: "11:00–13:00" },
-    { key: "s4", label: "14:00–16:00" },
-    { key: "s5", label: "16:00–18:00" },
-    { key: "s6", label: "19:00–21:00" },
+    { key: "s1", label: "11:00–13:00" },
+    { key: "s2", label: "13:00–15:00" },
+    { key: "s3", label: "15:00–17:00" },
+    { key: "s4", label: "17:00–19:00" },
+    { key: "s5", label: "19:00–21:00" },
+    { key: "s6", label: "21:00–23:00" },
   ];
 
   const HOURS_PER_SLOT = 2;
