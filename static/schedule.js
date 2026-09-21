@@ -49,45 +49,23 @@
 
   // Every day: 1h job sourcing, 1h tech applications, 1h customer service
   // applications, plus daily project work and interview prep (describing
-  // projects). Study topics get longer or doubled-up sessions, rotated
-  // through the week so each one gets real depth.
-  const SUGGESTED_PLAN = {
-    Mon: {
+  // projects). Each day focuses on exactly ONE study topic for a solid
+  // 3-hour block instead of splitting attention, rotating through the week
+  // so every topic gets real, uninterrupted depth.
+  const STUDY_ROTATION = ["excel", "ai", "csnet", "dataeng", "excel", "ai", "csnet"];
+
+  function dayPlan(studyTopic) {
+    return {
       s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
-      s6: "excel", s7: "excel", s8: "ai",
+      s6: studyTopic, s7: studyTopic, s8: studyTopic,
       s9: "projects", s10: "describe",
-    },
-    Tue: {
-      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
-      s6: "ai", s7: "ai", s8: "csnet",
-      s9: "projects", s10: "describe",
-    },
-    Wed: {
-      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
-      s6: "csnet", s7: "csnet", s8: "dataeng",
-      s9: "projects", s10: "describe",
-    },
-    Thu: {
-      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
-      s6: "dataeng", s7: "dataeng", s8: "excel",
-      s9: "projects", s10: "describe",
-    },
-    Fri: {
-      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
-      s6: "excel", s7: "ai", s8: "csnet", s9: "dataeng",
-      s10: "describe",
-    },
-    Sat: {
-      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
-      s6: "dataeng", s7: "dataeng",
-      s9: "projects",
-    },
-    Sun: {
-      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
-      s6: "csnet", s7: "ai",
-      s9: "describe",
-    },
-  };
+    };
+  }
+
+  const SUGGESTED_PLAN = {};
+  DAYS.forEach((day, i) => {
+    SUGGESTED_PLAN[day] = dayPlan(STUDY_ROTATION[i]);
+  });
 
   function loadSchedule() {
     try {
