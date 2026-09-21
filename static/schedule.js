@@ -52,7 +52,11 @@
   // projects). Each day focuses on exactly ONE study topic for a solid
   // 3-hour block instead of splitting attention, rotating through the week
   // so every topic gets real, uninterrupted depth.
-  const STUDY_ROTATION = ["excel", "ai", "csnet", "dataeng", "excel", "ai", "csnet"];
+  // Monday's Excel session got skipped (job search only that day), so the
+  // rest of the week's rotation shifts forward one day to absorb it instead
+  // of dropping it: Tue picks up the makeup Excel session, then AI/CS.NET/
+  // Data Eng each slide back a day.
+  const STUDY_ROTATION = ["excel", "excel", "ai", "csnet", "dataeng", "excel", "ai"];
 
   function dayPlan(studyTopic) {
     return {
