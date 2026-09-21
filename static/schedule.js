@@ -2,20 +2,26 @@
   const grid = document.getElementById("scheduleGrid");
   if (!grid) return;
 
-  const STORAGE_KEY = "ln-schedule-v1";
+  const STORAGE_KEY = "ln-schedule-v2";
 
   const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   const SLOTS = [
-    { key: "s1", label: "11:00–13:00" },
-    { key: "s2", label: "13:00–15:00" },
-    { key: "s3", label: "15:00–17:00" },
-    { key: "s4", label: "17:00–19:00" },
-    { key: "s5", label: "19:00–21:00" },
-    { key: "s6", label: "21:00–23:00" },
+    { key: "s1", label: "11:00–12:00" },
+    { key: "s2", label: "12:00–13:00" },
+    { key: "s3", label: "13:00–14:00" },
+    { key: "s4", label: "14:00–15:00" },
+    { key: "s5", label: "15:00–16:00" },
+    { key: "s6", label: "16:00–17:00" },
+    { key: "s7", label: "17:00–18:00" },
+    { key: "s8", label: "18:00–19:00" },
+    { key: "s9", label: "19:00–20:00" },
+    { key: "s10", label: "20:00–21:00" },
+    { key: "s11", label: "21:00–22:00" },
+    { key: "s12", label: "22:00–23:00" },
   ];
 
-  const HOURS_PER_SLOT = 2;
+  const HOURS_PER_SLOT = 1;
 
   const GOALS = {
     excel: { label: "Excel Mastery", css: "goal-excel" },
@@ -41,14 +47,46 @@
     "dataeng",
   ];
 
+  // Every day: 1h job sourcing, 1h tech applications, 1h customer service
+  // applications, plus daily project work and interview prep (describing
+  // projects). Study topics get longer or doubled-up sessions, rotated
+  // through the week so each one gets real depth.
   const SUGGESTED_PLAN = {
-    Mon: { s1: "sourcing", s2: "techjobs", s3: "excel", s4: "projects", s5: "csnet", s6: "describe" },
-    Tue: { s1: "sourcing", s2: "csjobs", s3: "ai", s4: "dataeng", s5: "projects", s6: "excel" },
-    Wed: { s1: "sourcing", s2: "techjobs", s3: "csnet", s4: "projects", s5: "ai", s6: "describe" },
-    Thu: { s1: "sourcing", s2: "csjobs", s3: "dataeng", s4: "excel", s5: "projects", s6: "csnet" },
-    Fri: { s1: "sourcing", s2: "techjobs", s3: "ai", s4: "projects", s5: "describe", s6: "dataeng" },
-    Sat: { s1: "projects", s2: "csnet", s3: "dataeng" },
-    Sun: { s1: "excel", s2: "ai", s3: "describe" },
+    Mon: {
+      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
+      s6: "excel", s7: "excel", s8: "ai",
+      s9: "projects", s10: "describe",
+    },
+    Tue: {
+      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
+      s6: "ai", s7: "ai", s8: "csnet",
+      s9: "projects", s10: "describe",
+    },
+    Wed: {
+      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
+      s6: "csnet", s7: "csnet", s8: "dataeng",
+      s9: "projects", s10: "describe",
+    },
+    Thu: {
+      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
+      s6: "dataeng", s7: "dataeng", s8: "excel",
+      s9: "projects", s10: "describe",
+    },
+    Fri: {
+      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
+      s6: "excel", s7: "ai", s8: "csnet", s9: "dataeng",
+      s10: "describe",
+    },
+    Sat: {
+      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
+      s6: "dataeng", s7: "dataeng",
+      s9: "projects",
+    },
+    Sun: {
+      s1: "sourcing", s2: "techjobs", s3: "csjobs", s4: "projects", s5: "describe",
+      s6: "csnet", s7: "ai",
+      s9: "describe",
+    },
   };
 
   function loadSchedule() {
